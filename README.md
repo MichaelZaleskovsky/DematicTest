@@ -1,14 +1,19 @@
-DematicTest
+# DEMATIC TEST APPLICATION
 
 Test Java application for quick book storage, update, access and total price calculation.
-Created using SpringBoot framework.
-Clone application as Maven project.
 
-Run BookstoreApplication.java to start server.
 
-Test using Junit and Rest-assured library.
+Created using **SpringBoot** framework.
 
-Run BookstoreApplicationTests.java for test.
+Clone application as **Maven** project.
+
+Run **BookstoreApplication.java** to start server.
+
+
+Test using **Junit** and **Rest-assured** library.
+
+Run **BookstoreApplicationTests.java** for test.
+
 
 # API List
 
