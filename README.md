@@ -10,10 +10,12 @@ Test using Junit and Rest-assured library.
 
 Run BookstoreApplicationTests.java for test.
 
-API List
+# API List
 
 ------------------------------------------------------------------
-1. ADD BOOK  
+## 1. ADD BOOK  
+
+### REQUEST
 
 Type - POST
 
@@ -31,9 +33,9 @@ Body
 	"pricePerUnit":"2.17"
 }
 ```
-Response:
+### RESPONSE
 
-if Success
+**if Success**
 
   Status: 201,
 
@@ -47,7 +49,8 @@ if Success
 	"pricePerUnit":"2.17"
 }
 ```
-if Error
+**if Error**
+
   Status: 406,
 
   Body:
@@ -59,7 +62,9 @@ or
   Error object if request body not match with example
 
 ------------------------------------------------------------------
-2. ADD ANTIQUE BOOK  
+# 2. ADD ANTIQUE BOOK  
+
+### REQUEST
 
 Type - POST
 
@@ -75,12 +80,12 @@ Body
 	"author":"My author",
 	"quantity":"10",
 	"pricePerUnit":"2.17",
-	"releaseYear": "1920"
+	"releaseYear": "1820"   `must be less then 1900`
 }
 ```
-Response:
+### RESPONSE
 
-if Success
+**if Success**
 
   Status: 201,
 
@@ -92,10 +97,62 @@ if Success
 	"author":"My author",
 	"quantity":"10",
 	"pricePerUnit":"2.17",
-	"releaseYear": "1920"
+	"releaseYear": "1820"
 }
 ```
-if Error
+**if Error**
+
+  Status: 406,
+
+  Body:
+
+  Error message "Book with given barcode already exist"
+
+or
+
+  Error object if request body not match with example
+
+------------------------------------------------------------------
+# 3. ADD SCIENCE BOOK  
+
+### REQUEST
+
+Type - POST
+
+URL - http://localhost:8080/books/science
+
+Headers - Content-type : application/json
+
+Body
+```
+{
+	"barcode":"1111",
+	"name":"My name",
+	"author":"My author",
+	"quantity":"10",
+	"pricePerUnit":"2.17",
+	"scienceIndex": "2"    `must be between 1 - 10`
+}
+```
+### RESPONSE
+
+**if Success**
+
+  Status: 201,
+
+  Body: 
+```
+{
+	"barcode":"1111",
+	"name":"My name",
+	"author":"My author",
+	"quantity":"10",
+	"pricePerUnit":"2.17",
+	"scienceIndex": "2"
+}
+```
+**if Error**
+
   Status: 406,
 
   Body:
