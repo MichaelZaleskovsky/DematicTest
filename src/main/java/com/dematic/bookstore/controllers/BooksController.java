@@ -96,7 +96,7 @@ public class BooksController {
 		Double totalPrice = bookService.getTotalPrice(barcode);
 		
 		ResponseEntity result = totalPrice == null ? 
-				new ResponseEntity(HttpStatus.NOT_FOUND) : new ResponseEntity(totalPrice, HttpStatus.OK);
+				new ResponseEntity(notExist, HttpStatus.NOT_FOUND) : new ResponseEntity(totalPrice, HttpStatus.OK);
 		return result;
 	}
 
