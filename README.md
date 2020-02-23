@@ -37,6 +37,7 @@ Body
 	"quantity":"10",
 	"pricePerUnit":"2.17"
 }
+All parameters are required
 ```
 ### RESPONSE
 
@@ -87,6 +88,7 @@ Body
 	"pricePerUnit":"2.17",
 	"releaseYear": "1820"   //must be less then 1900
 }
+All parameters are required
 ```
 ### RESPONSE
 
@@ -138,6 +140,7 @@ Body
 	"pricePerUnit":"2.17",
 	"scienceIndex": "2"    //must be between 1 - 10
 }
+All parameters are required
 ```
 ### RESPONSE
 
