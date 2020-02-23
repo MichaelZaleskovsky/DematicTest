@@ -16,8 +16,11 @@ API List
 1. ADD BOOK  
 
 Type - POST
+
 URL - http://localhost:8080/books
+
 Headers - Content-type : application/json
+
 Body
 ```
 {
@@ -29,9 +32,12 @@ Body
 }
 ```
 Response:
+
 if Success
-  Status 201,
-  Body 
+
+  Status: 201,
+
+  Body: 
 ```
 {
 	"barcode":"1111",
@@ -42,18 +48,25 @@ if Success
 }
 ```
 if Error
-  Status 406
-  Body
+  Status: 406,
+
+  Body:
+
   Error message "Book with given barcode already exist"
+
 or
+
   Error object if request body not match with example
 
 ------------------------------------------------------------------
-1. ADD BOOK  
+2. ADD ANTIQUE BOOK  
 
 Type - POST
-URL - http://localhost:8080/books
+
+URL - http://localhost:8080/books/antique
+
 Headers - Content-type : application/json
+
 Body
 ```
 {
@@ -61,26 +74,34 @@ Body
 	"name":"My name",
 	"author":"My author",
 	"quantity":"10",
-	"pricePerUnit":"2.17"
+	"pricePerUnit":"2.17",
+	"releaseYear": "1920"
 }
 ```
 Response:
+
 if Success
-  Status 201,
-  Body 
+
+  Status: 201,
+
+  Body: 
 ```
 {
 	"barcode":"1111",
 	"name":"My name",
 	"author":"My author",
 	"quantity":"10",
-	"pricePerUnit":"2.17"
+	"pricePerUnit":"2.17",
+	"releaseYear": "1920"
 }
 ```
 if Error
-  Status 406
-  Body
-  Error message "Book with given barcode already exist"
-or
-  Error object if request body not match with example
+  Status: 406,
 
+  Body:
+
+  Error message "Book with given barcode already exist"
+
+or
+
+  Error object if request body not match with example
