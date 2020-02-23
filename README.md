@@ -62,7 +62,7 @@ or
   Error object if request body not match with example
 
 ------------------------------------------------------------------
-# 2. ADD ANTIQUE BOOK  
+## 2. ADD ANTIQUE BOOK  
 
 ### REQUEST
 
@@ -80,7 +80,7 @@ Body
 	"author":"My author",
 	"quantity":"10",
 	"pricePerUnit":"2.17",
-	"releaseYear": "1820"   `must be less then 1900`
+	"releaseYear": "1820"   //must be less then 1900
 }
 ```
 ### RESPONSE
@@ -113,7 +113,7 @@ or
   Error object if request body not match with example
 
 ------------------------------------------------------------------
-# 3. ADD SCIENCE BOOK  
+## 3. ADD SCIENCE BOOK  
 
 ### REQUEST
 
@@ -131,7 +131,7 @@ Body
 	"author":"My author",
 	"quantity":"10",
 	"pricePerUnit":"2.17",
-	"scienceIndex": "2"    `must be between 1 - 10`
+	"scienceIndex": "2"    //must be between 1 - 10
 }
 ```
 ### RESPONSE
@@ -162,3 +162,129 @@ Body
 or
 
   Error object if request body not match with example
+
+------------------------------------------------------------------
+## 4. GET BOOK  
+
+### REQUEST
+
+Type - GET
+
+URL - http://localhost:8080/books/{barkode}
+
+Headers - Content-type : application/json
+
+### RESPONSE
+
+**if Success**
+
+  Status: 200,
+
+  Body: 
+```
+{
+	"barcode":"1111",
+	"name":"My name",
+	"author":"My author",
+	"quantity":"10",
+	"pricePerUnit":"2.17"
+}
+or
+{
+	"barcode":"1111",
+	"name":"My name",
+	"author":"My author",
+	"quantity":"10",
+	"pricePerUnit":"2.17",
+	"scienceIndex": "2"
+}
+or
+{
+	"barcode":"1111",
+	"name":"My name",
+	"author":"My author",
+	"quantity":"10",
+	"pricePerUnit":"2.17",
+	"releaseYear": "1820"
+}
+depend of type of book
+```
+**if Error**
+
+  Status: 404,
+
+  Body:
+
+  Error message "Book with given barcode not exist"
+
+------------------------------------------------------------------
+## 5. UPDATE BOOK  
+
+### REQUEST
+
+Type - PUT
+
+URL - http://localhost:8080/books/{barkode}
+
+Headers - Content-type : application/json
+
+### RESPONSE
+
+**if Success**
+
+  Status: 200,
+
+  Body: 
+```
+{
+	"barcode":"1111",
+	"name":"My name",
+	"author":"My author",
+	"quantity":"10",
+	"pricePerUnit":"2.17",
+	"scienceIndex": "2",         //must be between 1 - 10
+	"releaseYear": "1820"        //must be less then 1900
+}
+every paramenter is optional
+```
+**if Error**
+
+  Status: 404,
+
+  Body:
+
+  Error message "Book with given barcode not exist"
+
+------------------------------------------------------------------
+## 6. GET TOTAL PRICE  
+
+### REQUEST
+
+Type - GET
+
+URL - http://localhost:8080/totalprice/{barcode}
+
+Headers - Content-type : application/json
+
+### RESPONSE
+
+**if Success**
+
+  Status: 200,
+
+  Body: 
+```
+	21.6
+
+```
+**if Error**
+
+  Status: 404,
+
+  Body:
+
+  Error message "Book with given barcode not exist"
+
+------------------------------------------------------------------
+
+
